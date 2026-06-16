@@ -71,7 +71,7 @@
             <div class="col-span-1 lg:col-span-7 flex flex-col justify-between p-8 sm:p-12 relative bg-white min-h-screen">
 
                 <!-- Centered Form Wrapper -->
-                <div class="my-auto w-full max-w-[400px] mx-auto py-12">
+                <div class="my-auto w-full max-w-[400px] md:max-w-xl lg:max-w-2xl mx-auto py-12">
                     {{ $slot }}
                 </div>
 
@@ -80,5 +80,6 @@
             </div>
 
         </div>
+        <x-toast />
     </body>
 </html>

@@ -2,14 +2,14 @@
 
 use App\Models\User;
 
-test('profile page is displayed', function () {
+test('profile page is not accessible', function () {
     $user = User::factory()->create();
 
     $response = $this
         ->actingAs($user)
         ->get('/profile');
 
-    $response->assertOk();
+    $response->assertStatus(405);
 });
 
 test('profile information can be updated', function () {
@@ -24,7 +24,7 @@ test('profile information can be updated', function () {
 
     $response
         ->assertSessionHasNoErrors()
-        ->assertRedirect('/profile');
+        ->assertRedirect('/dashboard');
 
     $user->refresh();
 
@@ -45,7 +45,7 @@ test('email verification status is unchanged when the email address is unchanged
 
     $response
         ->assertSessionHasNoErrors()
-        ->assertRedirect('/profile');
+        ->assertRedirect('/dashboard');
 
     $this->assertNotNull($user->refresh()->email_verified_at);
 });
@@ -72,14 +72,14 @@ test('correct password must be provided to delete account', function () {
 
     $response = $this
         ->actingAs($user)
-        ->from('/profile')
+        ->from('/dashboard')
         ->delete('/profile', [
             'password' => 'wrong-password',
         ]);
 
     $response
         ->assertSessionHasErrorsIn('userDeletion', 'password')
-        ->assertRedirect('/profile');
+        ->assertRedirect('/dashboard');
 
     $this->assertNotNull($user->fresh());
 });
