@@ -1,13 +1,11 @@
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" {{ $attributes }}>
-    <!-- Circular background with gradient matching the teal-to-cyan theme -->
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0db8a6" /> <!-- teal-500 -->
-            <stop offset="100%" stop-color="#06b6d4" /> <!-- cyan-500 -->
+            <stop offset="0%" stop-color="#0db8a6" />
+            <stop offset="100%" stop-color="#06b6d4" />
         </linearGradient>
     </defs>
     <circle cx="50" cy="50" r="48" fill="url(#logo-gradient)" />
-    <!-- Bold white letter S in the center -->
     <text x="50%" y="54%" 
           dominant-baseline="middle" 
           text-anchor="middle" 

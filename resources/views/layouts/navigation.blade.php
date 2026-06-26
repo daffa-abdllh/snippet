@@ -4,8 +4,11 @@
         <div class="grid grid-cols-12 items-center h-16 relative">
             <!-- Logo & Search -->
             <div class="col-span-4 flex items-center gap-4">
-                <a href="{{ route('dashboard') }}" class="shrink-0 flex items-center">
-                    <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                <a href="{{ route('dashboard') }}" class="shrink-0 flex items-center gap-2.5">
+                    <x-application-logo class="block h-9 w-9" />
+                    <span class="text-lg font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-cyan-600">
+                        snippet
+                    </span>
                 </a>
                 @auth
                     <div class="hidden md:block w-full max-w-[240px]">
